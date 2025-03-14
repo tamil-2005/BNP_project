@@ -48,8 +48,8 @@ public class StudentServiceImp implements StudentService {
     // not
     
     @Override
-    public List<Student> getStudentsBydept(String dept) { 
-//        return StudentRepository.findBydept(dept); 
+    public List<Student> getStudentsBydept(Integer dept) { 
+//        return StudentRepository.findByDeptId(dept); 
     	return null;
     }
 

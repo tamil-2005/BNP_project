@@ -31,6 +31,8 @@ public class Student {
 	private String stream;
 	@Column(name="Student_email")
 	private String email;
+	
+	
 	public long getRegno() {
 		return regno;
 	}

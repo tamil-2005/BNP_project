@@ -17,7 +17,7 @@ public interface StudentService {
 	List<Student> getAllStudents();
 	Optional<Student> getStudentByRegno(Integer regno);
 	List<Student> getStudentsByBatch(Integer batch);
-	List<Student> getStudentsBydept(String dept);
+	List<Student> getStudentsBydept(Integer dept);
 	
 // update
 	

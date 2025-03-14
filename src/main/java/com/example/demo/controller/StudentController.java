@@ -64,10 +64,10 @@ public class StudentController {
 //    @GetMapping("/students/dept/{dept}")
 //    public ResponseEntity<List<Student>> getStudentsBydept(@PathVariable String dept) {
 //    	String word=dept.toUpperCase();
-//        List<Student> batchStudent = StudentService.getStudentsByBatch(dept);
+//        List<Student> batchStudent = StudentService.getStudentsBydept(dept);
 //        return ResponseEntity.ok(batchStudent);
 //    } 
-    
+//    
     
     @PutMapping("/students/regno/{regno}")
     public ResponseEntity<Student> updateByRegno(@PathVariable Integer regno, @RequestBody Student student) {

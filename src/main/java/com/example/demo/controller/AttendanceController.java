@@ -25,8 +25,7 @@ public class AttendanceController {
 	public AttendanceService AttendanceService;
 	
 	
-	
-
+	// get Attendance by Reg_No
 	@GetMapping("/attendance/regno/{regno}")
 	public ResponseEntity<Optional<Attendance>>  getAllAttendance(@PathVariable Long regno) {
 	    Optional<Attendance> attend = AttendanceService.getAllAttendance(regno);
@@ -34,12 +33,16 @@ public class AttendanceController {
 	}
 	
 	
-//	Create Student
+	
+	// set attendance
 	@PostMapping("/attendance")
 	public ResponseEntity<Attendance> setAttendance(@RequestBody Attendance attentance) {
 		Attendance setAttendance = AttendanceService.setAttendance(attentance);
 	    return ResponseEntity.ok(setAttendance);
 	}
+	
+	
+	
 	
 	
 }
