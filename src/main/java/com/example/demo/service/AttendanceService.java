@@ -12,11 +12,13 @@ public interface AttendanceService {
 	
 	Optional<Attendance> getAllAttendance(Long regno);
 	
-	Attendance overAllAttendance(Attendance attentance);
 	
-	Attendance resetAttendance(Attendance attentance);
 	
-	Attendance resetAttendanceBySub(Attendance attentance);
+
+	
+	Attendance resetAttendanceByreg(Attendance attentance,Long regno);
+
+	void resetAttendance();
 
 	
 }

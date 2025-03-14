@@ -14,10 +14,11 @@ import jakarta.persistence.Table;
 
 public class Attendance {
 	
-	@Id
+	
 	@Column(name="dept_id") 
 	private long dept_id;
 	
+	@Id
 	@Column(name="reg_no") 
 	private long regno;
 	
@@ -37,8 +38,7 @@ public class Attendance {
 	private int sub5;
 
 	
-	@Column(name="overall")
-	private int overall;
+
 
 
 	public long getDept_id() {
@@ -111,17 +111,9 @@ public class Attendance {
 	}
 
 
-	public int getOverall() {
-		return overall;
-	}
 
 
-	public void setOverall(int overall) {
-		this.overall = overall;
-	}
-
-
-	public Attendance(long dept_id, long regno, int sub1, int sub2, int sub3, int sub4, int sub5, int overall) {
+	public Attendance(long dept_id, long regno, int sub1, int sub2, int sub3, int sub4, int sub5) {
 		super();
 		this.dept_id = dept_id;
 		this.regno = regno;
@@ -130,7 +122,7 @@ public class Attendance {
 		this.sub3 = sub3;
 		this.sub4 = sub4;
 		this.sub5 = sub5;
-		this.overall = overall;
+
 	}
 
 	
@@ -140,7 +132,7 @@ public class Attendance {
 	@Override
 	public String toString() {
 		return "Attendance [dept_id=" + dept_id + ", regno=" + regno + ", sub1=" + sub1 + ", sub2=" + sub2 + ", sub3="
-				+ sub3 + ", sub4=" + sub4 + ", sub5=" + sub5 + ", overall=" + overall + "]";
+				+ sub3 + ", sub4=" + sub4 + ", sub5=" + sub5 + "]";
 	}
 	
 	
