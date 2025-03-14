@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+
+
 @Entity
 
 @Table(name="Student")
@@ -19,14 +21,16 @@ public class Student {
 	private String name;
 	@Column(name="Student_batch")
 	private long batch;
-	@Column(name="Student_dept")
-	private String dept;
+	@Column(name="Student_dept_id")
+	private int dept_id;
 	@Column(name="Student_mobileno")
 	private long mobileno;
 	@Column(name="Student_dob")
 	private LocalDate dob;
 	@Column(name="Student_stream")
 	private String stream;
+	@Column(name="Student_email")
+	private String email;
 	public long getRegno() {
 		return regno;
 	}
@@ -45,11 +49,11 @@ public class Student {
 	public void setBatch(long batch) {
 		this.batch = batch;
 	}
-	public String getDept() {
-		return dept;
+	public int getDept_id() {
+		return dept_id;
 	}
-	public void setDept(String dept) {
-		this.dept = dept;
+	public void setDept_id(int dept_id) {
+		this.dept_id = dept_id;
 	}
 	public long getMobileno() {
 		return mobileno;
@@ -69,27 +73,36 @@ public class Student {
 	public void setStream(String stream) {
 		this.stream = stream;
 	}
-	@Override
-	public String toString() {
-		return "Student [regno=" + regno + ", name=" + name + ", batch=" + batch + ", dept=" + dept + ", mobileno="
-				+ mobileno + ", dob=" + dob + ", stream=" + stream + "]";
+	public String getEmail() {
+		return email;
 	}
-	public Student(long regno, String name, long batch, String dept, long mobileno, LocalDate dob, String stream) {
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public Student(long regno, String name, long batch, int dept_id, long mobileno, LocalDate dob, String stream,
+			String email) {
 		super();
 		this.regno = regno;
 		this.name = name;
 		this.batch = batch;
-		this.dept = dept;
+		this.dept_id = dept_id;
 		this.mobileno = mobileno;
 		this.dob = dob;
 		this.stream = stream;
+		this.email = email;
+	}
+	
+	
+	public Student() {}
+	@Override
+	public String toString() {
+		return "Student [regno=" + regno + ", name=" + name + ", batch=" + batch + ", dept_id=" + dept_id
+				+ ", mobileno=" + mobileno + ", dob=" + dob + ", stream=" + stream + ", email=" + email + "]";
 	}
 	
 	
 	
-	public Student(){
-		
-	};
+	
 	
 	
 }

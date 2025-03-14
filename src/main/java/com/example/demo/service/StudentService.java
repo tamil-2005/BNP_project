@@ -21,17 +21,19 @@ public interface StudentService {
 	
 // update
 	
-	Student updateByRegno(Integer regno);
+	Optional<Student> updateByRegno(Integer regno ,Student Student);
 	
 // Delete
 	
-	Student deleteAllStudents();
-	Student deleteStudentsByRegno(Integer regno);
-	Student deleteStudentsByBatch(Integer batch);
-	Student deleteStudentsBydept(String dept);
+	void deleteStudentsByRegno(Integer regno);
+	void deleteStudentsByBatch(Integer batch);
 
 
-	List<Student> getStudentsByBatch();
+
+
+
+
+
 	
 	
 }

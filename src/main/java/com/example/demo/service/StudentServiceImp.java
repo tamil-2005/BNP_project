@@ -35,67 +35,63 @@ public class StudentServiceImp implements StudentService {
 	}
 
 
+    @Override
+    public List<Student> getStudentsByBatch(Integer batch) {
+        return StudentRepository.findByBatch(batch);
+    }
+
+    
+    
+    
+    
+    
+    // not
+    
+    @Override
+    public List<Student> getStudentsBydept(String dept) { 
+//        return StudentRepository.findBydept(dept); 
+    	return null;
+    }
+
+
+
+
+
+
 	@Override
-	public List<Student> getStudentsByBatch(Integer batch) {
-//		return StudentRepository.findAllById(batch);
-		return null;
+	public void deleteStudentsByRegno(Integer regno) {
+		StudentRepository.deleteById(regno);
 	}
 
 
 	@Override
-	public List<Student> getStudentsBydept(String dept) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	@Override
-	public Student updateByRegno(Integer regno) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	@Override
-	public Student deleteAllStudents() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	@Override
-	public Student deleteStudentsByRegno(Integer regno) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	@Override
-	public Student deleteStudentsByBatch(Integer batch) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	@Override
-	public Student deleteStudentsBydept(String dept) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	@Override
-	public List<Student> getStudentsByBatch() {
-		// TODO Auto-generated method stub
-		return null;
+	public void deleteStudentsByBatch(Integer batch) {
+		StudentRepository.deleteById(batch);
 	}
 
 
 
 
+	@Override
+	 public Optional<Student> updateByRegno(Integer regno, Student student) {
+        Optional<Student> existingStudent = StudentRepository.findById(regno);
+        
+        if (existingStudent.isPresent()) {
+            Student updatedStudent = existingStudent.get();
+            updatedStudent.setName(student.getName());  
+            updatedStudent.setDept_id(student.getDept_id());
+            updatedStudent.setBatch(student.getBatch());
+            updatedStudent.setDob(student.getDob());
+            updatedStudent.setMobileno(student.getMobileno());
+            updatedStudent.setStream(student.getStream()); 
 
+            StudentRepository.save(updatedStudent); 
+            return Optional.of(updatedStudent);
+        }
 
-	
+        return Optional.empty();
+    }
+
 	
 	
 }
