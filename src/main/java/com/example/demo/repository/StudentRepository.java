@@ -9,9 +9,6 @@ import com.example.demo.entity.Student;
 public interface StudentRepository extends JpaRepository<Student,Integer>  {
 
 	List<Student> findByBatch(Integer batch);
-//	List<Student> findByDeptId(Integer deptId);
-
-
 
 
 }

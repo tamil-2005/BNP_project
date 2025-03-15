@@ -40,23 +40,6 @@ public class StudentServiceImp implements StudentService {
         return StudentRepository.findByBatch(batch);
     }
 
-    
-    
-    
-    
-    
-    // not
-    
-    @Override
-    public List<Student> getStudentsBydept(Integer dept) { 
-//        return StudentRepository.findByDeptId(dept); 
-    	return null;
-    }
-
-
-
-
-
 
 	@Override
 	public void deleteStudentsByRegno(Integer regno) {
