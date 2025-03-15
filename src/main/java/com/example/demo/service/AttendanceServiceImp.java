@@ -23,7 +23,7 @@ public class AttendanceServiceImp implements AttendanceService {
 
 	@Override
 	public void resetAttendance() {
-	    List<Attendance> resettotal = AttendanceRepository.findAll(); // Assuming attendanceRepository is injected
+	    List<Attendance> resettotal = AttendanceRepository.findAll(); 
 
 	    for (Attendance attendance : resettotal) {
 	        attendance.setSub1(0);

@@ -56,7 +56,7 @@ public class StudentServiceImp implements StudentService {
 
 
 	@Override
-	 public Optional<Student> updateByRegno(Integer regno, Student student) {
+	 public Optional<Student> updateByRegno(Integer regno, Student student) {  //reference
         Optional<Student> existingStudent = StudentRepository.findById(regno);
         
         if (existingStudent.isPresent()) {
